@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { SidebarTrigger } from "./ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const router = useRouter();
@@ -51,6 +52,24 @@ const Navbar = () => {
             Discover your perfect rental apartment with our advanced search
           </p>
         )}
+        <div className="flex items-center gap-5">
+          <Link href="/signin">
+            <Button
+              variant="outline"
+              className="text-white border-white bg-transparent hover:bg-background hover:text-foreground rounded-lg"
+            >
+              Sign In
+            </Button>
+          </Link>
+          <Link href="/signup">
+            <Button
+              variant="secondary"
+              className="text-white bg-secondary-600 hover:bg-background hover:text-foreground rounded-lg"
+            >
+              Sign Up
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
